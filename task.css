@@ -1,47 +1,46 @@
-.task-form{
+.task-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 }
-#task-label{
+#task-label {
   font-size: 1.3rem;
   font-weight: 700;
   padding: 10px 0;
 }
 
-#task-inp{
+#task-inp {
   font-size: 1.3rem;
-  color: #333;
-  font-weight: 700;
+  color: rgb(119, 117, 117);
+  font-weight: 500;
   padding: 15px;
   border: 1px solid gray;
   border-radius: 10px;
 }
 
-.task-container{
+.task-container {
   max-width: 568px;
   margin: 0 auto;
 }
 
-input::placeholder{
-  font-size:1.2rem
+input::placeholder {
+  font-size: 1.2rem;
 }
-#task-btn{
+#task-btn {
   border: none;
   font-size: 1.3rem;
   font-weight: 600;
   color: #333;
   margin: 20px 0;
   width: 100%;
-  padding:15px;
+  padding: 15px;
   border-radius: 10px;
   cursor: pointer;
   background: #e9b857;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
 }
-#task-btn:hover{
+#task-btn:hover {
   background: #e4a62a;
 }
 
@@ -52,29 +51,27 @@ input::placeholder{
   justify-content: center;
 } */
 body{
-  margin-top: 20vh;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding: 3% 2%;
 }
-.add-task-container .added-task{
+.add-task-container .added-task {
   font-size: 1.3rem;
   font-weight: 500;
   color: #333;
 }
-#empty-message{
+#empty-message {
   color: red;
 }
-.added-task{
+.added-task {
   padding: 15px;
 }
 
 .added-task li {
   list-style: none;
 }
-.add-task-container h2{
+.add-task-container h2 {
   text-align: center;
 }
-.delete-btn{
+.delete-btn {
   padding: 10px 40px;
   border: none;
   background-color: rgb(241, 87, 87);
@@ -83,11 +80,11 @@ body{
   border-radius: 10px;
   cursor: pointer;
 }
-.delete-btn:hover{
+.delete-btn:hover {
   background-color: rgb(243, 55, 55);
 }
 
-.added-task li{
+.added-task li {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -96,47 +93,61 @@ body{
 
 /* Target the checkboxes inside your list */
 li input[type="checkbox"] {
-    /* 1. Remove the default browser styling */
-    appearance: none;
-    -webkit-appearance: none; /* For Safari */
+  /* 1. Remove the default browser styling */
+  appearance: none;
+  -webkit-appearance: none; /* For Safari */
 
-    /* 2. Set the size */
-    width: 20px;
-    height: 20px;
+  /* 2. Set the size */
+  width: 20px;
+  height: 20px;
 
-    /* 3. Style the "Unchecked" state */
-    border: 2px solid #555;
-    border-radius: 4px;
-    background-color: white;
-    
-    /* 4. Alignment */
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    margin-right: 10px;
+  /* 3. Style the "Unchecked" state */
+  border: 2px solid #555;
+  border-radius: 4px;
+  background-color: white;
+
+  /* 4. Alignment */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
 }
 
 /* 5. Style the "Checked" state */
 li input[type="checkbox"]:checked {
-    background-color: #4CAF50; /* A nice green color */
-    border-color: #4CAF50;
+  background-color: #4caf50; /* A nice green color */
+  border-color: #4caf50;
 }
 
 /* 6. Add a checkmark (The "V" shape) using a pseudo-element */
 li input[type="checkbox"]:checked::after {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
+.task-back-page{
 
-@media screen and (min-width:360px) {
-
-  
+  text-decoration: none;
+  font-size: 1.3rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  background: #D3D3D3;
+  color: #363636;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease;
 }
+.task-back-page:hover{
+  background:#878787 ;
+  color: whitesmoke;
+}
+
