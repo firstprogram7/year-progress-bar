@@ -33,6 +33,22 @@
           </div>
         </div>
       </div>
+   <div class="target-container">
+  <label for="target">Achieve Goal in: </label>
+  <select name="target" id="target">
+    <option value="days">Days</option>
+    <option value="hours">Hours</option>
+  </select>
+<form id="target-setter">
+  <label id="target-label" for="target-inp">Set Target in Days</label>
+  <input type="number" id="target-inp">
+  <button id="target-btn">Set</button>
+
+</form>
+
+  <p class="countdown">Countdown:</p>
+  <h3 id="target_display" class="target_display">24 Hrs</h3>
+</div>
       <div class="goals-container">
         <a href="/task.html">Track Goals →</a>
       </div>

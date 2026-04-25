@@ -99,3 +99,24 @@ h2 {
   background-color: #2784ee;
   
 }
+
+/* Target section*/
+.target-container{
+  padding: 30px;
+}
+.countdown{
+  padding: 5px;
+}
+
+.target_display{
+  background-color: #ffea5c;
+  width: 100%;
+  max-width: 30%;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+
+
+

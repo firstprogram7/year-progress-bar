@@ -105,10 +105,78 @@ updateYearProgress();
 setInterval(updateYearProgress, 1000 * 60 * 60);
 
 
+// Goal setter 
+const targetSelect = document.getElementById("target");
+const targetLabel = document.getElementById("target-label");
+const targetInput = document.getElementById("target-inp");
+const targetBtn = document.getElementById("target-btn");
+const targetDisplay = document.getElementById("target_display");
+console.log(targetInput);
+// Create a function to update the label
+function updateLabel() {
+  const selectedValue = targetSelect.value;
+  if (selectedValue === "days") {
+   
+   let timer; // Variable to hold our interval
 
+   // --- 1. FUNCTION TO START THE TIMER ---
+   function startCountdown(endTime) {
+     // Clear any existing timer first to avoid overlaps
+     clearInterval(timer);
 
+     timer = setInterval(() => {
+       const now = new Date().getTime();
+       const distance = endTime - now;
 
+       if (distance <= 0) {
+         clearInterval(timer);
+         targetDisplay.innerText = "Time Up!";
+         localStorage.removeItem("savedTargetTime"); // Clean up memory
+         return;
+       }
 
+       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+       const hours = Math.floor(
+         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+       );
 
+       targetDisplay.innerText = `${days}d ${hours}h Left`;
+     }, 1000);
+   }
 
+   // --- 2. CHECK MEMORY ON PAGE LOAD ---
+   const savedTime = localStorage.getItem("savedTargetTime");
+   if (savedTime) {
+     // Convert string back to number and start
+     startCountdown(parseInt(savedTime));
+   }
 
+   // --- 3. HANDLE BUTTON CLICK ---
+   targetBtn.addEventListener("click", (e) => {
+     e.preventDefault();
+
+     const daysInput = parseFloat(targetInput.value.trim());
+     if (isNaN(daysInput)) return;
+
+     const durationMs = daysInput * 24 * 60 * 60 * 1000;
+     const targetTime = new Date().getTime() + durationMs;
+
+     // Save to localStorage (only strings allowed)
+     localStorage.setItem("savedTargetTime", targetTime);
+
+     // Start the countdown
+     startCountdown(targetTime);
+   }); 
+
+  } else if (selectedValue === "hours") {
+    targetLabel.textContent = "Set Target in Hrs";
+  } else {
+    targetLabel.textContent = "Invalid input!";
+  }
+}
+
+// 1. Listen for changes when the user clicks the dropdown
+targetSelect.addEventListener("change", updateLabel);
+
+// 2. Run the function once on page load to set the initial state
+updateLabel();
