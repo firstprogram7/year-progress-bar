@@ -30,7 +30,7 @@ h2 {
 }
 
 .progress-bar {
-  height: 35px;
+  height: 30px;
   background-color: #0b3d91;
   width: 100%; /* Will be overridden by JavaScript */
   border-radius: 25px;
